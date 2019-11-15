@@ -3,7 +3,6 @@ import { Switch, BrowserRouter, Route } from 'react-router-dom'
 import { Transition, TransitionGroup } from 'react-transition-group';
 
 import HomePage from './components/HomePage';
-import ShufflePage from './components/ShufflePage';
 import ResultRestaurant from './components/ResultRestaurant'
 
 export default class App extends Component {
@@ -17,10 +16,6 @@ export default class App extends Component {
                 <Switch>
                   <Route exact path='/' render={routerProps => {
                     return <HomePage {...routerProps} />
-                  }
-                  } />
-                  <Route path={`/shuffle`} render={routerProps => {
-                    return <ShufflePage {...routerProps} />
                   }
                   } />
                   <Route path={`/:id`} render={routerProps => {
