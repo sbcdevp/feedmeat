@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Switch, BrowserRouter, Route } from 'react-router-dom'
+import { Transition, TransitionGroup } from 'react-transition-group';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import HomePage from './components/HomePage';
+import ShufflePage from './components/ShufflePage';
+import ResultRestaurant from './components/ResultRestaurant'
+
+export default class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="app">
+          <Route
+            render={({ location }) => {
+              return (
+                <Switch>
+                  <Route exact path='/' render={routerProps => {
+                    return <HomePage {...routerProps} />
+                  }
+                  } />
+                  <Route path={`/shuffle`} render={routerProps => {
+                    return <ShufflePage {...routerProps} />
+                  }
+                  } />
+                  <Route path={`/:id`} render={routerProps => {
+                    return <ResultRestaurant {...routerProps} />
+                  }
+                  } />
+                </Switch>
+              );
+            }}
+          />
+        </div>
+      </BrowserRouter>
+    )
+  }
 }
-
-export default App;
