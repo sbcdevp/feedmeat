@@ -15,7 +15,7 @@ export default class HomePage extends Component {
                     <div className="container__home--shuffle">
                         <div className="container__home--shuffle-content">
                             Cliquez sur l'écran pour découvrir un bon restaurant à moins de 800 mètres
-                    </div>
+                        </div>
                     </div>
                 </NavLink>
             </div>
