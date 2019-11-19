@@ -19,7 +19,7 @@
         },
         {
             "id": "1",
-            "name": "Les Enfants du Marché",
+            "name": "Les-Enfants-du-Marché",
             "bestFood": "Des moules de l’île de Groix, maousse, nageant dans une sauce au gorgonzola (tuerie) au milieu de calçots, ces oignons catalans tendres et doux",
             "street": "39 rue de Bretagne",
             "city": "Paris",
@@ -49,7 +49,7 @@
         },
         {
             "id": "3",
-            "name": "Les Arlots",
+            "name": "Les-Arlots",
             "bestFood": "Venez déguster leur fameux plat saucisse-purée maison.. réalisé avec passion et savoir depuis de longues années",
             "street": "136 rue du Faubourg Poissonnière",
             "city": "Paris",
@@ -83,7 +83,7 @@
         },
         {
             "id": "5",
-            "name": "Restaurant Passerini",
+            "name": "Restaurant-Passerini",
             "bestFood": "La pasta all'amatriciana ! On en salive encore.",
             "street": "65 rue Traversière",
             "city": "Paris",
@@ -145,7 +145,7 @@
         },
         {
             "id": "9",
-            "name": "Da Graziella",
+            "name": "Da-Graziella",
             "bestFood": "La pizza fritta comme à Napoli !",
             "street": "41 rue des Petites Ecuries",
             "city": "Paris",
@@ -179,7 +179,7 @@
         },
         {
             "id": "11",
-            "name": "Vivant 2",
+            "name": "Vivant-2",
             "bestFood": "Vous pourrez découvrir leur tsunamique chinchard à la flamme qui tabasse sans passe-passe, en mode cru soyeux au grillé torréfié, sur d’extatiques germes de soja baignés d’un jus corsé au gingembre",
             "street": "43 Rue des Petites Écuries",
             "city": "Paris",
@@ -194,7 +194,7 @@
         },
         {
             "id": "12",
-            "name": "Le Servan",
+            "name": "Le-Servan",
             "bestFood": "Des zakouski (hors-d'œuvre en russe), parmi lesquels de savoureux wonton (raviolis) de boudin noir frits, ou ces désormais mythiques coques pimentées au basilic thaï",
             "street": "32 rue Saint-Maur",
             "city": "Paris",
@@ -226,7 +226,7 @@
         },
         {
             "id": "14",
-            "name": "Le Chateaubriand",
+            "name": "Le-Chateaubriand",
             "bestFood": "Deux desserts signature : la glace au lait ribot, et le tocino de cielo revisité. Un jaune d'œuf confit coulant, zépo sur un socle de dacquoise (meringue à la poudre d’amandes), caramel fleur de sel… A gober d'une traite sous peine de s'en coller partout !",
             "street": "129 avenue Parmentier",
             "city": "Paris",
@@ -258,7 +258,7 @@
         },
         {
             "id": "16",
-            "name": "L’Avant-Comptoir du Marché",
+            "name": "L’Avant-Comptoir-du-Marché",
             "bestFood": "Une terrine de la semaine + un ballon de jaja nature.",
             "street": "14 rue Lobineau",
             "city": "Paris",
@@ -273,7 +273,7 @@
         },
         {
             "id": "17",
-            "name": "Le Baratin",
+            "name": "Le-Baratin",
             "bestFood": "La pomme de cœur de ris de veau braisée au citron.",
             "street": "3 rue Jouye-Rouve",
             "city": "Paris",
@@ -356,7 +356,7 @@
         },
         {
             "id": "22",
-            "name": "Abri Soba",
+            "name": "Abri-Soba",
             "bestFood": "La tempura soba avec ses beignets de crevettes et légumes.",
             "street": "10 rue Saulnier",
             "city": "Paris",
@@ -373,7 +373,7 @@
         },
         {
             "id": "23",
-            "name": "Ze Kitchen Galerie",
+            "name": "Ze-Kitchen-Galerie",
             "bestFood": "Ça change tous les mois… Mais ce midi-là, clairement le boeuf wagyu en deux façons, panais, carottes & Co…",
             "street": "4 Rue des Grands Augustins",
             "city": "Paris",
@@ -422,7 +422,7 @@
         },
         {
             "id": "26",
-            "name": "Double Dragon",
+            "name": "Double-Dragon",
             "bestFood": "Le tofu frit, la joue de porc caramélisée.",
             "street": "52, rue Saint-Maur",
             "city": "Paris",
@@ -471,7 +471,7 @@
         },
         {
             "id": "29",
-            "name": "Les Pantins",
+            "name": "Les-Pantins",
             "bestFood": "Le poulpe basque grillé qui fait pas sa mijaurée, dopé à la mousse d’ail, aneth, betterave rose crue",
             "street": "6 rue Victor Hugo",
             "city": "Pantin",
@@ -488,7 +488,7 @@
         },
         {
             "id": "30",
-            "name": "Le Rigmarole",
+            "name": "Le-Rigmarole",
             "bestFood": "Les brochettes cuites au charbon blanc.",
             "street": "10 rue du Grand Prieuré",
             "city": "Paris",
@@ -503,7 +503,7 @@
         },
         {
             "id": "31",
-            "name": "Le 975",
+            "name": "Le-975",
             "bestFood": "Un travers de porc ibérique confit aux épices, avec purée maison et petite roquette",
             "street": "25 Rue Guy Môquet",
             "city": "Paris",
@@ -520,7 +520,7 @@
         },
         {
             "id": "32",
-            "name": "Le Maquis",
+            "name": "Le-Maquis",
             "bestFood": "Ce bœuf saignant, grillé au poivre vert, topé de sauge fraîche et petits artichauts sauvages (ultragoûtus), reposant sur un lit d’épinards (23 €)",
             "street": "53 rue des Cloys",
             "city": "Paris",
@@ -567,7 +567,7 @@
         },
         {
             "id": "35",
-            "name": "Kunitoraya (Udon Bistro)",
+            "name": "Kunitoraya-(Udon-Bistro)",
             "bestFood": "Le Kunitoraya Udon, soupe chaude au miso avec émincés de porc soupe radis salsifis, au bouillon parfumé et entêtant.",
             "street": "1 rue Villedo",
             "city": "Paris",
@@ -584,7 +584,7 @@
         },
         {
             "id": "36",
-            "name": "Le Dauphin",
+            "name": "Le-Dauphin",
             "bestFood": "Le risotto à l’encre de seiche.",
             "street": "131 avenue Parmentier",
             "city": "Paris",
@@ -614,7 +614,7 @@
         },
         {
             "id": "38",
-            "name": "Cheval d'Or",
+            "name": "Cheval-d'Or",
             "bestFood": "Le char siu bao, dodu pain à la vapeur farci au porc laqué (9 € pièce)",
             "street": "21 rue de la Villette",
             "city": "Paris",
@@ -663,7 +663,7 @@
         },
         {
             "id": "41",
-            "name": "Paris New York (Strasbourg St Denis)",
+            "name": "Paris-New-York-(Strasbourg-St-Denis)",
             "bestFood": "Un Golden State of Mind : bœuf Le Ponclet, cheddar affiné 18 mois, poitrine fumée, tomate, sauce moutarde à l'ancienne",
             "street": "50 rue du Faubourg Saint-Denis",
             "city": "Paris",
@@ -680,7 +680,7 @@
         },
         {
             "id": "42",
-            "name": "Le Bar des Prés",
+            "name": "Le-Bar-des-Prés",
             "bestFood": "Des California saumon, avocat, jalapeño et sriracha.",
             "street": "25 rue du Dragon",
             "city": "Paris",
@@ -697,7 +697,7 @@
         },
         {
             "id": "43",
-            "name": "Boutique yam'Tcha",
+            "name": "Boutique-yam'Tcha",
             "bestFood": "Le bao au stilton (fromage anglais) et cerises amarena",
             "street": "4 rue Sauval",
             "city": "Paris",
@@ -712,7 +712,7 @@
         },
         {
             "id": "44",
-            "name": "Le Tagine",
+            "name": "Le-Tagine",
             "bestFood": "Le couscous spécial à 21 € et son mix de viandes.",
             "street": "13 rue de Crussol",
             "city": "Paris",
@@ -727,7 +727,7 @@
         },
         {
             "id": "45",
-            "name": "Breizh Café (Batignolles)",
+            "name": "Breizh-Café-(Batignolles)",
             "bestFood": "La galette tomme de Savoie, poitrine de cochon fumée, œuf bio brouillé, pommes de terre Vitelotte, crème crue de la Maison Bordier",
             "street": "31 Rue des Batignolles",
             "city": "Paris",
@@ -757,7 +757,7 @@
         },
         {
             "id": "47",
-            "name": "Deux fois plus de piment",
+            "name": "Deux-fois-plus-de-piment",
             "bestFood": "Le porc aux poireaux (en réalité des oignons nouveaux)",
             "street": "33 Rue Saint-Sébastien",
             "city": "Paris",
@@ -791,7 +791,7 @@
         },
         {
             "id": "49",
-            "name": "Urfa Dürüm",
+            "name": "Urfa-Dürüm",
             "bestFood": "Un dürüm à l'agneau",
             "street": "58 rue du Faubourg-Saint-Denis",
             "city": "Paris",

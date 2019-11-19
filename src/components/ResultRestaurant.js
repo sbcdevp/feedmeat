@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import MapBox from './MapBox';
-// import { NavLink } from 'react-router-dom';
+import Shuffle from './Shuffle';
+
+import { NavLink } from 'react-router-dom';
 export default class ResultRestaurant extends Component {
-    componentDidMount() {
+    constructor(props) {
+        super(props)
+    }
+    displayRestaurant() {
+        const { match, Restaurants } = this.props;
+        this.restaurant = Restaurants.Restaurants.filter((restaurant) => {
+            return restaurant.name === match.params.name
+        })[0];
+    }
+    shuffleRestaurant() {
+        this.shuffleComponent = new Shuffle()
+        this.displayRestaurant()
+        return this.shuffleComponent.getOneRestaurant()
     }
     render() {
         const { Restaurants } = this.props
@@ -14,7 +28,9 @@ export default class ResultRestaurant extends Component {
                 <div className="container__restaurant--topHint">
                     <div className="container__restaurant--topHint-header">sss</div>
                     <div className="container__restaurant--topHint-redo">
-                        <button className=""><i className="fa fa-redo"></i>Un autre ?</button>
+                        <NavLink to={{ pathname: `/${this.shuffleRestaurant()}` }}>
+                            <button className=""><i className="fa fa-redo"></i>Un autre ?</button>
+                        </NavLink>
                     </div>
                 </div>
                 <div className="container__restaurant--bottomHint">
@@ -41,12 +57,12 @@ export default class ResultRestaurant extends Component {
                             <button><hr /></button>
                         </div>
                         <div className="container__restaurant--info-content-title">
-                            <h1>Anatolien</h1>
+                            <h1>{this.restaurant.name.split('-').join(' ')}</h1>
                         </div>
                         <div className="container__restaurant--info-content-addressAndDistance">
                             <div className="container__restaurant--info-content-addressAndDistance-addresse">
-                                5 rue Saint-Bernard <br />
-                                Paris - 75011
+                                {this.restaurant.street} <br />
+                                {this.restaurant.city} - {this.restaurant.postalCode}
                             </div>
                             <div className="container__restaurant--info-content-addressAndDistance-distance">
                                 480 mètres
@@ -63,10 +79,10 @@ export default class ResultRestaurant extends Component {
                         <hr />
                         <div className="container__restaurant--info-content-about">
                             <div className="container__restaurant--info-content-about-title">
-                                À propos du restaurant
+                                Plat culte
                             </div>
                             <div className="container__restaurant--info-content-about-text">
-                                Mokonuts est un modeste coffee shop où l’on peut bâfrer, un bon gros cookie pâtissé par la géniale luciole japonaise, Moko Hirayama.
+                                {this.restaurant.bestFood}
                             </div>
                         </div>
                     </div>

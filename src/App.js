@@ -6,10 +6,11 @@ import HomePage from './components/HomePage';
 import ResultRestaurant from './components/ResultRestaurant'
 // import FontAwesomeIcon from '@fontawesome/fontawesome-free'
 import Restaurants from './restaurants.json'
+import UserProvider from './provider/UserProvider';
 export default class App extends Component {
   render() {
     return (
-      < BrowserRouter >
+      <BrowserRouter >
         <div className="app">
           <Route
             render={({ location }) => {
@@ -19,7 +20,7 @@ export default class App extends Component {
                     return <HomePage {...routerProps} Restaurants={Restaurants} />
                   }
                   } />
-                  <Route path={`/:id`} render={routerProps => {
+                  <Route path={`/:name`} render={routerProps => {
                     return <ResultRestaurant {...routerProps} Restaurants={Restaurants} />
                   }
                   } />
