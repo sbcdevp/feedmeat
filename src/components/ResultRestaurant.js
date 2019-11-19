@@ -5,10 +5,11 @@ export default class ResultRestaurant extends Component {
     componentDidMount() {
     }
     render() {
+        const { Restaurants } = this.props
         return (
             <div className="container__restaurant">
                 <div className="container__restaurant--map">
-                    <MapBox/>
+                    <MapBox />
                 </div>
                 <div className="container__restaurant--topHint">
                     <div className="container__restaurant--topHint-header">sss</div>
@@ -37,14 +38,14 @@ export default class ResultRestaurant extends Component {
                     </div>
                     <div className="container__restaurant--info-content">
                         <div className="container__restaurant--info-content-expandToggle">
-                            <button><hr/></button>
+                            <button><hr /></button>
                         </div>
                         <div className="container__restaurant--info-content-title">
                             <h1>Anatolien</h1>
                         </div>
                         <div className="container__restaurant--info-content-addressAndDistance">
                             <div className="container__restaurant--info-content-addressAndDistance-addresse">
-                                5 rue Saint-Bernard <br/>
+                                5 rue Saint-Bernard <br />
                                 Paris - 75011
                             </div>
                             <div className="container__restaurant--info-content-addressAndDistance-distance">
@@ -59,7 +60,7 @@ export default class ResultRestaurant extends Component {
                                 Menu midi à 42 €, carte blanche en 7 étapes à 80 €.
                             </div>
                         </div>
-                        <hr/>
+                        <hr />
                         <div className="container__restaurant--info-content-about">
                             <div className="container__restaurant--info-content-about-title">
                                 À propos du restaurant

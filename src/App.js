@@ -4,22 +4,23 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 
 import HomePage from './components/HomePage';
 import ResultRestaurant from './components/ResultRestaurant'
-import FontAwesomeIcon from '@fortawesome/fontawesome-free'
+// import FontAwesomeIcon from '@fontawesome/fontawesome-free'
+import Restaurants from './restaurants.json'
 export default class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      < BrowserRouter >
         <div className="app">
           <Route
             render={({ location }) => {
               return (
                 <Switch>
                   <Route exact path='/' render={routerProps => {
-                    return <HomePage {...routerProps} />
+                    return <HomePage {...routerProps} Restaurants={Restaurants} />
                   }
                   } />
                   <Route path={`/:id`} render={routerProps => {
-                    return <ResultRestaurant {...routerProps} />
+                    return <ResultRestaurant {...routerProps} Restaurants={Restaurants} />
                   }
                   } />
                 </Switch>
@@ -27,7 +28,7 @@ export default class App extends Component {
             }}
           />
         </div>
-      </BrowserRouter>
+      </BrowserRouter >
     )
   }
 }

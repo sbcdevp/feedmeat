@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
-import ReactMapGL, {Popup, FlyToInterpolator, GeolocateControl} from 'react-map-gl';
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
+import ReactMapGL, { Popup, FlyToInterpolator, GeolocateControl } from 'react-map-gl';
 
 const TOKEN = 'pk.eyJ1IjoieWFveWk2IiwiYSI6ImNrMXVtY2VxbzBiYW8zaXBhazdjZjhjZ3AifQ.MueZPMq5R3Pz8a6YUJAuXQ';
 
@@ -26,37 +26,49 @@ export default class MapBox extends Component {
             }
         };
     }
-
+    _setUserLocation = () => {
+        navigator.geolocation.getCurrentPosition(position => {
+            let newViewport = {
+                height: "100vh",
+                width: "100vw",
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+                zoom: 12
+            }
+            this.setState({
+                viewport: newViewport
+            })
+        })
+    }
     componentDidMount() {
     }
-
-    _displayRestaurant = (longitude, latitude) => {
-        const viewport = {...this.state.viewport, longitude: longitude, latitude: latitude};
-        this.setState({viewport});
-    }
-
+    // _displayRestaurant = (longitude, latitude) => {
+    //     const viewport = { ...this.state.viewport, longitude: longitude, latitude: latitude };
+    //     this.setState({ viewport });
+    // }
     render() {
         return (
             <div>
                 <ReactMapGL {...this.state.viewport}
-                            onViewportChange={(viewport) => this.setState({viewport})}
-                            transitionDuration={100}
-                            transitionInterpolator={new FlyToInterpolator()}
-                            mapboxApiAccessToken={TOKEN}>
+                    onViewportChange={(viewport) => this.setState({ viewport })}
+                    transitionDuration={100}
+                    transitionInterpolator={new FlyToInterpolator()}
+                    mapboxApiAccessToken={TOKEN}>
                     <GeolocateControl
                         style={geolocateStyle}
-                        positionOptions={{enableHighAccuracy: true}}
+                        positionOptions={{ enableHighAccuracy: true }}
                         trackUserLocation={true}
                         showUserLocation={true}
                     />
-                            {this.state.showPopup && <Popup
-                                latitude={48.8535973}
-                                longitude={2.3809063}
-                                closeButton={false}
-                                closeOnClick={false}
-                                onClose={() => this.setState({showPopup: false})}
-                                anchor="top">
-                                <div>Anatolien</div>
+                    <button onClick={this._setUserLocation}>Hello</button>
+                    {this.state.showPopup && <Popup
+                        latitude={48.8535973}
+                        longitude={2.3809063}
+                        closeButton={false}
+                        closeOnClick={false}
+                        onClose={() => this.setState({ showPopup: false })}
+                        anchor="top">
+                        <div>Anatolien</div>
 
                     </Popup>}
 

@@ -1,9 +1,31 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import MapBox from './MapBox';
 export default class HomePage extends Component {
+    constructor(props) {
+        super(props)
+        this.newUserCoords = {
+            latitude: 0,
+            longitude: 0
+        }
+        this.getUserPosition()
+    }
     componentDidMount() {
     }
+
+    getUserPosition() {
+        navigator.geolocation.getCurrentPosition(position => {
+            this.newUserCoords = {
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude,
+            }
+            console.log(position)
+        })
+    }
     render() {
+        const { Restaurants } = this.props.Restaurants
+        let rand = Restaurants[Math.floor(Math.random() * Restaurants.length)];
+
         return (
             <div className="container__home">
                 <div className="container__home--logo">
