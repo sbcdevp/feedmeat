@@ -60,7 +60,6 @@ export default class MapBox extends Component {
                         trackUserLocation={true}
                         showUserLocation={true}
                     />
-                    <button onClick={this._setUserLocation}>Hello</button>
                     {this.state.showPopup && <Popup
                         latitude={48.8535973}
                         longitude={2.3809063}

@@ -4,9 +4,7 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 
 import HomePage from './components/HomePage';
 import ResultRestaurant from './components/ResultRestaurant'
-// import FontAwesomeIcon from '@fontawesome/fontawesome-free'
 import Restaurants from './restaurants.json'
-import UserProvider from './provider/UserProvider';
 export default class App extends Component {
   render() {
     return (

@@ -803,6 +803,66 @@
             "longitude": "2.35426",
             "note": "4",
             "phoneNumber": "01 48 24 12 84"
+        },
+        {
+            "id": "50",
+            "name": "Test1",
+            "bestFood": "Un dürüm à l'agneau",
+            "street": "58 rue du Faubourg-Saint-Denis",
+            "city": "Paris",
+            "postalCode": "75010",
+            "averagePrice": "10",
+            "openingHourPM": "12h00",
+            "closeHourPM": "00h00",
+            "latitude": "48.8724",
+            "longitude": "2.35426",
+            "note": "4",
+            "phoneNumber": "01 48 24 12 84"
+        },
+        {
+            "id": "51",
+            "name": "Test2",
+            "bestFood": "Un dürüm à l'agneau",
+            "street": "58 rue du Faubourg-Saint-Denis",
+            "city": "Paris",
+            "postalCode": "75010",
+            "averagePrice": "10",
+            "openingHourPM": "12h00",
+            "closeHourPM": "00h00",
+            "latitude": "48.872144",
+            "longitude": "2.405909",
+            "note": "4",
+            "phoneNumber": "01 48 24 12 84"
+        },
+        {
+            "id": "52",
+            "name": "Test3",
+            "bestFood": "Un dürüm à l'agneau",
+            "street": "58 rue du Faubourg-Saint-Denis",
+            "city": "Paris",
+            "postalCode": "75010",
+            "averagePrice": "10",
+            "openingHourPM": "12h00",
+            "closeHourPM": "00h00",
+            "latitude": "48.872186",
+            "longitude": "2.405823",
+            "note": "4",
+            "phoneNumber": "01 48 24 12 84"
+        },
+        {
+            "id": "53",
+            "name": "Test4",
+            "bestFood": "Un dürüm à l'agneau",
+            "street": "58 rue du Faubourg-Saint-Denis",
+            "city": "Paris",
+            "postalCode": "75010",
+            "averagePrice": "10",
+            "openingHourPM": "12h00",
+            "closeHourPM": "00h00",
+            "latitude": "48.872243",
+            "longitude": "2.404364",
+            "note": "4",
+            "phoneNumber": "01 48 24 12 84"
         }
     ]
 }
