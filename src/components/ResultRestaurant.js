@@ -1,13 +1,26 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect} from 'react';
 import MapBox from './MapBox';
 import Shuffle from './Shuffle';
-
+import {withRouter} from 'react-router-dom'
 import {NavLink} from 'react-router-dom';
 import {UserContext} from "../reducer/Reducer";
 
-const ResultRestaurant = () => {
+
+const ResultRestaurant = (props) => {
     const {state, dispatch} = React.useContext(UserContext);
     const resultRestaurant = state.userRestaurant.currentRestaurantNear;
+
+    const delay = (ms) => new Promise(resolve =>
+        setTimeout(resolve, ms)
+    );
+
+    const handleChangeCurrentRestaurant = () => {
+        // dispatch({type: 'GET_ANOTHER_RESTAURANT_NEAR'});
+        // props.history.push('/'+`${resultRestaurant.name}`)
+        dispatch({type: 'GET_ANOTHER_RESTAURANT_NEAR'});
+        props.history.push('/'+`${state.userRestaurant.currentRestaurantNear.name}`)
+    };
+
     return (
         <div className="container__restaurant">
             <div className="container__restaurant--map">
@@ -16,13 +29,9 @@ const ResultRestaurant = () => {
             <div className="container__restaurant--topHint">
                 <div className="container__restaurant--topHint-header">sss</div>
                 <div className="container__restaurant--topHint-redo">
-                    <NavLink to={{pathname: `/${
-                        () => {
-                            dispatch({type: 'GET_ANOTHER_RESTAURANT_NEAR'});
-                            return resultRestaurant.name
-                        }}`}}>
-                        <button className=""><i className="fa fa-redo"></i>Un autre ?</button>
-                    </NavLink>
+                    <button className="" onClick={() => handleChangeCurrentRestaurant()}>
+                        <i className="fa fa-redo"></i>Un autre ?
+                    </button>
                 </div>
             </div>
             <div className="container__restaurant--bottomHint">
@@ -85,4 +94,4 @@ const ResultRestaurant = () => {
     )
 }
 
-export default ResultRestaurant;
+export default withRouter(ResultRestaurant);

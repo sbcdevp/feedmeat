@@ -9,19 +9,24 @@ const HomePage = () => {
     const {state, dispatch} = React.useContext(UserContext);
 
     return <div className="container__home">
-        <NavLink to={{pathname: `/${state.userRestaurant.currentRestaurantNear.name}`}}>
-            <div className="container__home--logo">
-                <div className="container__home--logo-imgContainer">
-                    <img src="https://res.cloudinary.com/dgxpb4jhs/image/upload/v1573822753/feedmeat-logo_yebqdz.png"/>
+        {console.log("state.userGeolocation",state.userGeolocation)}
+        {state.userGeolocation.latitude ?
+            <NavLink to={{pathname: `/${state.userRestaurant.currentRestaurantNear.name}`}}>
+                <div className="container__home--logo">
+                    <div className="container__home--logo-imgContainer">
+                        <img src="https://res.cloudinary.com/dgxpb4jhs/image/upload/v1573822753/feedmeat-logo_yebqdz.png"/>
+                    </div>
                 </div>
-            </div>
-            <div className="container__home--shuffle">
-                <div className="container__home--shuffle-content">
-                    Cliquez sur l'écran pour découvrir un bon restaurant à moins de 800 mètres
+                <div className="container__home--shuffle">
+                    <div className="container__home--shuffle-content">
+                        Cliquez sur l'écran pour découvrir un bon restaurant à moins de 800 mètres
+                    </div>
                 </div>
-            </div>
-            }
-        </NavLink>
+                }
+            </NavLink>
+            :null
+            //to do transition
+        }
     </div>
 }
 
