@@ -1,12 +1,10 @@
-import React, {createContext, useReducer, useState, useEffect} from 'react';
+import React, { createContext, useReducer, useState, useEffect } from 'react';
 import Restaurants from '../restaurants.json'
 
 
 const getUserGeolocation = () => {
     navigator.geolocation.getCurrentPosition(position => {
-        // this.setState({ userGeolocation:{latitude: position.coords.latitude, longitude: position.coords.longitude} })
-        userGeolocation = {latitude: position.coords.latitude, longitude: position.coords.longitude}
-        // console.log(userGeolocation)
+        userGeolocation = { latitude: position.coords.latitude, longitude: position.coords.longitude }
     });
     return userGeolocation
 };
@@ -19,7 +17,6 @@ const getAllRestaurantsNear = () => {
 
 const getOneRestaurantNear = (Restaurants) => {
     let rand = Restaurants[Math.floor(Math.random() * Restaurants.length)];
-    // return rand.name.replace(" ", "-");
     return rand;
 };
 
@@ -44,7 +41,7 @@ const userReducer = (state, action) => {
                 }
             };
         case 'SET_USER_GEOLOCATION':
-            return {...state, userGeolocation: userGeolocation};
+            return { ...state, userGeolocation: userGeolocation };
         default:
             return state;
     }
@@ -52,20 +49,20 @@ const userReducer = (state, action) => {
 
 export const UserContext = createContext(initialState);
 
-export const UserProvider = ({children}) => {
+export const UserProvider = ({ children }) => {
     const [state, dispatch] = useReducer(userReducer, initialState);
 
     useEffect(() => {
         let geoInterval = setInterval(() => {
-            if (userGeolocation!==undefined)
-                dispatch({type:'SET_USER_GEOLOCATION'});
-                clearInterval(geoInterval);
+            if (userGeolocation !== undefined)
+                dispatch({ type: 'SET_USER_GEOLOCATION' });
+            clearInterval(geoInterval);
         }, 0)
     }, [userGeolocation])
 
 
     return (
-        <UserContext.Provider value={{state, dispatch}}>
+        <UserContext.Provider value={{ state, dispatch }}>
             {children}
         </UserContext.Provider>
     )
