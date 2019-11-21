@@ -54,9 +54,11 @@ export const UserProvider = ({ children }) => {
 
     useEffect(() => {
         let geoInterval = setInterval(() => {
-            if (userGeolocation !== undefined)
+            if (userGeolocation !== undefined) {
                 dispatch({ type: 'SET_USER_GEOLOCATION' });
-            clearInterval(geoInterval);
+                console.log('cc')
+                clearInterval(geoInterval);
+            }
         }, 0)
     }, [userGeolocation])
 

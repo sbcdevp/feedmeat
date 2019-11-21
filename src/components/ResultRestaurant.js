@@ -1,13 +1,13 @@
-import React, {Component, useEffect} from 'react';
+import React, { Component, useEffect } from 'react';
 import MapBox from './MapBox';
 import Shuffle from './Shuffle';
-import {withRouter} from 'react-router-dom'
-import {NavLink} from 'react-router-dom';
-import {UserContext} from "../reducer/Reducer";
+import { withRouter } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import { UserContext } from "../reducer/Reducer";
 
 
 const ResultRestaurant = (props) => {
-    const {state, dispatch} = React.useContext(UserContext);
+    const { state, dispatch } = React.useContext(UserContext);
     const resultRestaurant = state.userRestaurant.currentRestaurantNear;
 
     const delay = (ms) => new Promise(resolve =>
@@ -17,14 +17,14 @@ const ResultRestaurant = (props) => {
     const handleChangeCurrentRestaurant = () => {
         // dispatch({type: 'GET_ANOTHER_RESTAURANT_NEAR'});
         // props.history.push('/'+`${resultRestaurant.name}`)
-        dispatch({type: 'GET_ANOTHER_RESTAURANT_NEAR'});
-        props.history.push('/'+`${state.userRestaurant.currentRestaurantNear.name}`)
+        dispatch({ type: 'GET_ANOTHER_RESTAURANT_NEAR' });
+        props.history.push('/' + `${state.userRestaurant.currentRestaurantNear.name}`)
     };
 
     return (
-        <div className="container__restaurant">
+        <div className="container__restaurant js-container-restaurant">
             <div className="container__restaurant--map">
-                <MapBox/>
+                <MapBox />
             </div>
             <div className="container__restaurant--topHint">
                 <div className="container__restaurant--topHint-header">sss</div>
@@ -56,7 +56,7 @@ const ResultRestaurant = (props) => {
                 <div className="container__restaurant--info-content">
                     <div className="container__restaurant--info-content-expandToggle">
                         <button>
-                            <hr/>
+                            <hr />
                         </button>
                     </div>
                     <div className="container__restaurant--info-content-title">
@@ -64,7 +64,7 @@ const ResultRestaurant = (props) => {
                     </div>
                     <div className="container__restaurant--info-content-addressAndDistance">
                         <div className="container__restaurant--info-content-addressAndDistance-addresse">
-                            {resultRestaurant.street} <br/>
+                            {resultRestaurant.street} <br />
                             {resultRestaurant.city} - {resultRestaurant.postalCode}
                         </div>
                         <div className="container__restaurant--info-content-addressAndDistance-distance">
@@ -79,7 +79,7 @@ const ResultRestaurant = (props) => {
                             Menu midi à 42 €, carte blanche en 7 étapes à 80 €.
                         </div>
                     </div>
-                    <hr/>
+                    <hr />
                     <div className="container__restaurant--info-content-about">
                         <div className="container__restaurant--info-content-about-title">
                             Plat culte

@@ -1,24 +1,26 @@
 .container__home
     background-color: $colorPink
+    position: absolute
+    top: 0
+    left: 0
     width: 100%
     height: 100vh
     &--logo
         background-color: $colorBlue
         width: 100%
         height: 100vh
+        display: flex
+        justify-content: center
+        align-items: center
         position: absolute
-        left: 50%
-        top: 50%
-        transform: translate(-50%, -50%)
-        display: none
+        z-index: 999
+
         &-imgContainer
-            display: none
-            position: absolute
-            left: 50%
-            top: 50%
-            transform: translate(-50%, -50%)
+            display: flex
+            align-items: center
+            overflow: hidden
             img
-                width: 105px
+                width: 65px
     &--shuffle
         background-color: $colorPink
         width: 100%
@@ -26,10 +28,20 @@
         position: absolute
         left: 50%
         top: 50%
+        z-index: 1
         text-align: center
+        // display: none
         transform: translate(-50%, -50%)
+        overflow: hidden
         &-content
             position: absolute
             left: 50%
             top: 50%
             transform: translate(-50%, -50%)
+        .link-shuffle
+            width: 100%
+            height: 100vh
+            position: absolute
+            top: 0
+            left: 0
+
