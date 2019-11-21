@@ -15,11 +15,10 @@ const HomePage = () => {
             {state.userGeolocation.latitude ?
                 <NavLink className='link-shuffle' to={{ pathname: `/${state.userRestaurant.currentRestaurantNear.name}` }}>
                     <div className="container__home--shuffle-content">
-                        Cliquez sur l'écran pour découvrir un bon restaurant à moins de 800 mètres
+                        Cliquez sur l'écran pour découvrir <span className="text-bold">  un nouveau restaurant </span> à moins de 800 mètres
                     </div>
                 </NavLink>
-                : <h1>On vous cherche</h1>
-                //to do transition
+                : <div className='container__home--shuffle-content'>On tente de vous localiser !</div>
             }
         </div>
     </div>

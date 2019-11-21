@@ -4,7 +4,6 @@ import { Transition, TransitionGroup } from 'react-transition-group';
 import Animation from './animations/animations';
 import HomePage from './components/HomePage';
 import ResultRestaurant from './components/ResultRestaurant'
-import Restaurants from './restaurants.json'
 import { UserProvider } from './reducer/Reducer.js';
 
 export default class App extends Component {

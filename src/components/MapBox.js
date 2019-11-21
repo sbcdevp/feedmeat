@@ -1,83 +1,48 @@
-import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import ReactMapGL, { Popup, FlyToInterpolator, GeolocateControl } from 'react-map-gl';
+import React, { useEffect, useRef, useState } from "react";
+import { UserContext } from "../reducer/Reducer";
+
+import MapGL, { GeolocateControl, Popup } from 'react-map-gl'
+import "mapbox-gl/dist/mapbox-gl.css";
 
 const TOKEN = 'pk.eyJ1IjoieWFveWk2IiwiYSI6ImNrMXVtY2VxbzBiYW8zaXBhazdjZjhjZ3AifQ.MueZPMq5R3Pz8a6YUJAuXQ';
 
-const geolocateStyle = {
-    position: 'absolute',
-    top: '15vh',
-    right: 0,
-    margin: 10,
-    zIndex: 900
-};
+const MapboxGLMap = () => {
+    const { state, dispatch } = React.useContext(UserContext);
 
-export default class MapBox extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            showPopup: true,
-            viewport: {
-                width: window.innerWidth,
-                height: window.innerHeight,
-                latitude: 48.8535973,
-                longitude: 2.3809063,
-                zoom: 14
-            }
-        };
-    }
-    _setUserLocation = () => {
-        navigator.geolocation.getCurrentPosition(position => {
-            let newViewport = {
-                height: "100vh",
-                width: "100vw",
-                latitude: position.coords.latitude,
-                longitude: position.coords.longitude,
-                zoom: 12
-            }
-            this.setState({
-                viewport: newViewport
-            })
-        })
-    }
-    componentDidMount() {
-    }
-    // _displayRestaurant = (longitude, latitude) => {
-    //     const viewport = { ...this.state.viewport, longitude: longitude, latitude: latitude };
-    //     this.setState({ viewport });
-    // }
-    render() {
-        return (
-            <div>
-                <ReactMapGL {...this.state.viewport}
-                    onViewportChange={(viewport) => this.setState({ viewport })}
-                    transitionDuration={100}
-                    transitionInterpolator={new FlyToInterpolator()}
-                    mapboxApiAccessToken={TOKEN}>
-                    <GeolocateControl
-                        style={geolocateStyle}
-                        positionOptions={{ enableHighAccuracy: true }}
-                        trackUserLocation={true}
-                        showUserLocation={true}
-                    />
-                    {this.state.showPopup && <Popup
-                        latitude={48.8535973}
-                        longitude={2.3809063}
-                        closeButton={false}
-                        closeOnClick={false}
-                        onClose={() => this.setState({ showPopup: false })}
-                        anchor="top">
-                        <div>Anatolien</div>
+    const resultUserPos = state.userGeolocation,
+        resultRestaurant = state.userRestaurant.currentRestaurantNear;
 
-                    </Popup>}
-
-
-                    {/*<Marker latitude={48.8535973} longitude={2.3809063} offsetLeft={-20} offsetTop={-10}>*/}
-                    {/*    <div>You are here</div>*/}
-                    {/*</Marker>*/}
-                </ReactMapGL>
-                {/*<button onClick={()=>{this._goToNYC(-74.1,40.7)}}>New York City</button>*/}
-            </div>
-        );
+    let [viewport, setViewPort] = useState({
+        width: window.innerWidth,
+        height: window.innerHeight,
+        latitude: 48.8535973,
+        longitude: 2.3809063,
+        zoom: 12
+    })
+    const _onViewportChange = (viewport) => {
+        setViewPort({ ...viewport })
     }
+
+    return (
+        <div>
+            <MapGL
+                {...viewport}
+                mapboxApiAccessToken={TOKEN}
+                onViewportChange={_onViewportChange}
+                onUpdateUserLocation={_onViewportChange}
+            >
+                <Popup
+                    latitude={resultRestaurant.latitude}
+                    longitude={resultRestaurant.longitude}
+                    closeButton={false}
+                    closeOnClick={false}
+                    onClose={() => this.setState({ showPopup: false })}
+                    anchor="top">
+                    <div>{resultRestaurant.name}</div>
+                </Popup>}
+            </MapGL>
+        </div>
+    )
 }
+
+export default MapboxGLMap
