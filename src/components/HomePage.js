@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { UserContext } from '../reducer/Reducer.js';
 
 const HomePage = () => {
-    const { state, dispatch } = React.useContext(UserContext);
-
+    const { state } = React.useContext(UserContext);
     return <div className="container__home js-container-home">
         <div className="container__home--logo js-container-logo">
             <div className="container__home--logo-imgContainer js-logo">
@@ -12,10 +11,10 @@ const HomePage = () => {
             </div>
         </div>
         <div className="container__home--shuffle js-shuffle">
-            {state.userGeolocation.latitude ?
+            {state ?
                 <NavLink className='link-shuffle' to={{ pathname: `/${state.userRestaurant.currentRestaurantNear.name}` }}>
                     <div className="container__home--shuffle-content">
-                        Cliquez sur l'écran pour découvrir <span className="text-bold">  un nouveau restaurant </span> à moins de 800 mètres
+                        Cliquez sur l'écran pour découvrir <span className="text-bold"> un nouveau restaurant </span> à moins de 800 mètres
                     </div>
                 </NavLink>
                 : <div className='container__home--shuffle-content'>On tente de vous localiser !</div>

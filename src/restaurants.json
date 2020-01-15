@@ -663,7 +663,7 @@
         },
         {
             "id": "41",
-            "name": "Paris-New-York-(Strasbourg-St-Denis)",
+            "name": "Paris-New-York",
             "bestFood": "Un Golden State of Mind : bœuf Le Ponclet, cheddar affiné 18 mois, poitrine fumée, tomate, sauce moutarde à l'ancienne",
             "street": "50 rue du Faubourg Saint-Denis",
             "city": "Paris",
@@ -801,6 +801,21 @@
             "closeHourPM": "00h00",
             "latitude": 48.8724,
             "longitude": 2.35426,
+            "note": "4",
+            "phoneNumber": "01 48 24 12 84"
+        },
+        {
+            "id": "50",
+            "name": "Saperlipopette",
+            "bestFood": "test",
+            "street": "58 rue du Faubourg-Saint-Denis",
+            "city": "Paris",
+            "postalCode": "75010",
+            "averagePrice": "10",
+            "openingHourPM": "12h00",
+            "closeHourPM": "00h00",
+            "latitude": 48.8805261,
+            "longitude": 2.2393206,
             "note": "4",
             "phoneNumber": "01 48 24 12 84"
         }

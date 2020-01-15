@@ -1,8 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
-import { UserContext } from "../reducer/Reducer";
+import React, { useState } from "react";
+import { UserContext } from "../../reducer/Reducer";
 
-import MapGL, { GeolocateControl, Popup } from 'react-map-gl'
+import MapGL, { Popup } from 'react-map-gl'
 import "mapbox-gl/dist/mapbox-gl.css";
+import './style.sass'
+
 
 const TOKEN = 'pk.eyJ1IjoieWFveWk2IiwiYSI6ImNrMXVtY2VxbzBiYW8zaXBhazdjZjhjZ3AifQ.MueZPMq5R3Pz8a6YUJAuXQ';
 
@@ -24,7 +26,7 @@ const MapboxGLMap = () => {
     }
 
     return (
-        <div>
+        <div className="container__restaurant--map">
             <MapGL
                 {...viewport}
                 mapboxApiAccessToken={TOKEN}

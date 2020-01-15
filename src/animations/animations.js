@@ -16,7 +16,7 @@ export default class Animation {
         return timeline;
     }
     getRestaurantEnterTimeline(delay) {
-        let infoContainer = this.container.querySelector('.container__restaurant--info-content'),
+        let infoContainer = this.container.querySelector('.js-info-content'),
             titleRestaurant = this.container.querySelector('.js-title-restaurant'),
             adressRestaurant = this.container.querySelector('.js-address-restaurant'),
             priceRestaurant = this.container.querySelector('.js-price-restaurant'),
@@ -33,7 +33,7 @@ export default class Animation {
             .from(adressRestaurant, 0.3, { opacity: 0, ease: Power3.easeInOut })
             .from(priceRestaurant, 0.3, { opacity: 0, ease: Power3.easeInOut })
             .from(aboutRestaurant, 0.3, { opacity: 0, ease: Power3.easeInOut })
-            .from(separator, 0.3, { width: 0, ease: Power3.easeInOut })
+            .fromTo(separator, 0.3, { width: 0, ease: Power3.easeInOut }, { width: '90%', ease: Power3.easeInOut })
         return timeline;
     }
 

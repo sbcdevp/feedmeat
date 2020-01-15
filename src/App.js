@@ -10,7 +10,7 @@ export default class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div className="app">
+                <React.Fragment>
                     <Route
                         render={({ location }) => {
 
@@ -42,7 +42,7 @@ export default class App extends Component {
                             );
                         }}
                     />
-                </div>
+                </React.Fragment>
             </BrowserRouter>
         )
     }
